@@ -93,4 +93,4 @@ export const ingredients = [
     image: images.ketchup,
     marginBottom: -8
   }
-];
+]

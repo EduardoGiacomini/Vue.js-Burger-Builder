@@ -36,11 +36,11 @@ export default {
     }
   },
   methods: {
-    handleAdd(ingredient) {
+    handleAdd (ingredient) {
       this.selected.unshift(ingredient)
       this.$emit('input', this.selected)
     },
-    handleRemove(ingredient) {
+    handleRemove (ingredient) {
       const index = this.selected.findIndex(i => i === ingredient)
       this.selected.splice(index, 1)
       this.$emit('input', this.selected)
