@@ -1,15 +1,15 @@
 <template>
   <draggable
-    :list="ingredients"
     group="burger"
-    class="burger"
     handle=".handle"
+    :list="ingredients"
     :move="handleMove"
   >
     <transition-group name="list" tag="div" mode="out-in">
-      <IngredientImage v-for="(ingredient, index) in ingredients"
-        :key="ingredient"
-        :ingredient="ingredient"
+      <Ingredient
+        v-for="(name, index) in ingredients"
+        :key="name"
+        :name="name"
         :index="ingredients.length - index" />
     </transition-group>
   </draggable>
@@ -17,8 +17,7 @@
 
 <script>
 import draggable from 'vuedraggable'
-
-import IngredientImage from './IngredientImage'
+import Ingredient from './Ingredient'
 
 export default {
   props: {
@@ -32,14 +31,7 @@ export default {
   },
   components: {
     draggable,
-    IngredientImage
+    Ingredient
   }
 }
 </script>
-
-<style scoped>
-.burger {
-  padding: 2rem 4rem;
-  max-width: 450px;
-}
-</style>

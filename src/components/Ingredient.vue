@@ -1,28 +1,29 @@
 <template>
-  <div class="container" :style="displayedStyle" :class="{handle: !ingredientData.disablePick}">
-    <img :src="ingredientData.image" />
+  <div class="container" :style="style" :class="{handle: !ingredient.disabled}">
+    <img :src="ingredient.image" />
   </div>
 </template>
 
 <script>
-import { ingredients } from '../models/ingredients'
+import { BASE_INGREDIENTS } from '../models/ingredients'
+const Z_INDEX_INCREMENT = 2
 
 export default {
   props: {
-    ingredient: String,
+    name: String,
     index: Number
   },
   computed: {
-    ingredientData () {
-      return ingredients.find(ingredient => ingredient.name === this.ingredient)
+    ingredient () {
+      return BASE_INGREDIENTS.find(ingredient => ingredient.name === this.name)
     },
-    displayedStyle () {
-      const { marginBottom, marginTop } = this.ingredientData
+    style () {
+      const { marginBottom, marginTop } = this.ingredient
 
       return {
         marginBottom: marginBottom + '%',
         marginTop: marginTop + '%',
-        zIndex: this.index + 2,
+        zIndex: this.index + Z_INDEX_INCREMENT,
         overflow: 'visible'
       }
     }
