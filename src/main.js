@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Wrapper from '@vue/web-component-wrapper'
 
-Vue.config.productionTip = false
+const wrappedElement = Wrapper(Vue, App)
 
-new Vue({
-  render: h => h(App)
-}).$mount('#app')
+window.customElements.define('v-burger', wrappedElement)

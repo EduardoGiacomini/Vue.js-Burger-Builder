@@ -1,5 +1,5 @@
 <template>
-  <Burger :ingredients="ingredients" />
+  <Burger :ingredients="decodedIngredients" />
 </template>
 
 <script>
@@ -8,19 +8,15 @@ import './assets/styles/index.css'
 
 export default {
   name: 'app',
-  data () {
-    return {
-      ingredients: [
-        'bun-top',
-        'onions',
-        'meat',
-        'cheese',
-        'pickles',
-        'salad',
-        'bacon',
-        'egg',
-        'bun-bottom'
-      ]
+  props: {
+    ingredients: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    decodedIngredients () {
+      return this.ingredients.split(' ')
     }
   },
   components: {

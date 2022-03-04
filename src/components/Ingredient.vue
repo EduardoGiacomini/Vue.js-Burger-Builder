@@ -1,6 +1,6 @@
 <template>
   <div class="container" :style="style" :class="{handle: !ingredient.disabled}">
-    <img :src="ingredient.image" />
+    <img width="100%" :src="ingredient.image" />
   </div>
 </template>
 
@@ -24,7 +24,8 @@ export default {
         marginBottom: marginBottom + '%',
         marginTop: marginTop + '%',
         zIndex: this.index + Z_INDEX_INCREMENT,
-        overflow: 'visible'
+        overflow: 'visible',
+        position: 'relative'
       }
     }
   }
@@ -43,9 +44,5 @@ export default {
       filter: saturate(1.1) brightness(1.2);
     }
   }
-}
-
-img {
-  width: 100%;
 }
 </style>
