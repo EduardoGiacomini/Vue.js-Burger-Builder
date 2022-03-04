@@ -2,7 +2,7 @@
   <main>
     <Ingredient
       v-for="(name, index) in ingredients"
-      :key="name"
+      :key="index"
       :name="name"
       :index="ingredients.length - index"
     />
