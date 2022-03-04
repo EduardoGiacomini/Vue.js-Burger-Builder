@@ -1,6 +1,6 @@
 <template>
   <div class="container" :style="style" :class="{handle: !ingredient.disabled}">
-    <img width="100%" :src="ingredient.image" />
+    <img :src="ingredient.image" :alt="ingredient.label" width="100%" />
   </div>
 </template>
 
@@ -19,30 +19,15 @@ export default {
     },
     style () {
       const { marginBottom, marginTop } = this.ingredient
-
       return {
+        cursor: 'pointer',
         marginBottom: marginBottom + '%',
         marginTop: marginTop + '%',
-        zIndex: this.index + Z_INDEX_INCREMENT,
         overflow: 'visible',
-        position: 'relative'
+        position: 'relative',
+        zIndex: this.index + Z_INDEX_INCREMENT
       }
     }
   }
 }
 </script>
-
-<style scoped lang="scss">
-.container {
-  position: relative;
-
-  &.handle {
-    cursor: pointer;
-    transition: 0.2s;
-
-    &:hover {
-      filter: saturate(1.1) brightness(1.2);
-    }
-  }
-}
-</style>
