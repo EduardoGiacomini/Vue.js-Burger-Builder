@@ -1,6 +1,6 @@
 <template>
   <div class="container" :style="style" :class="{handle: !ingredient.disabled}">
-    <img :src="ingredient.image" :alt="ingredient.label" width="100%" />
+    <component :is="ingredient.image"></component>
   </div>
 </template>
 
@@ -19,6 +19,7 @@ export default {
     },
     style () {
       const { marginBottom, marginTop } = this.ingredient
+
       return {
         cursor: 'pointer',
         marginBottom: marginBottom + '%',

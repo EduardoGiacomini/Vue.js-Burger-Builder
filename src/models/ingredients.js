@@ -1,30 +1,30 @@
-import * as images from '../assets/burger'
+import * as images from '@/components/ingredients'
 
 export const BASE_INGREDIENTS = [
   {
-    name: 'bun-bottom',
+    name: 'BunBottom',
     label: 'Bottom bun',
-    image: images.bunBottom,
+    image: images.BunBottom,
     disabled: true
   },
   {
-    name: 'bun-top',
+    name: 'BunTop',
     label: 'Top bun',
     margin: 0,
-    image: images.bunTop,
+    image: images.BunTop,
     marginBottom: -3,
     disabled: true
   },
   {
-    name: 'meat',
-    label: 'Meat',
-    image: images.meat,
-    marginBottom: -1
+    name: 'Bacon',
+    label: 'Bacon',
+    image: images.Bacon,
+    marginBottom: -4
   },
   {
-    name: 'cheese',
+    name: 'Cheese',
     label: 'Cheese',
-    image: images.cheese,
+    image: images.Cheese,
     marginBottom: -10,
     marginTop: -1
   },
